@@ -3,7 +3,8 @@ const app=express();
 const mongoose=require('mongoose');
 const port=process.env.PORT || 3000;
 const path=require('path');
-mongoose.connect('mongodb+srv://user:Password9080@cluster0.xguxfjd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+require('dotenv').config();
+mongoose.connect(process.env.mongo_uri)
 .then(() => {
     console.log('Connected to MongoDB');
 })
